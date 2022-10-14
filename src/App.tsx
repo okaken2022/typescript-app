@@ -76,6 +76,25 @@ const SPORTS = {
   baseball: "Baseball"
 }
 
+//enum(列挙型)連番を作ってくれる。メンテナンス性の向上
+enum OS {
+  Widows,
+  Mac,
+  Linux,
+}
+interface PC {
+  id: number;
+  OSType: OS;
+}
+const PC1: PC = {
+  id:1,
+  OSType: OS.Widows,
+}
+const PC2: PC = {
+  id:2,
+  OSType: OS.Mac
+}
+
 let keySports: keyof typeof SPORTS;
 keySports = "soccer"
 
