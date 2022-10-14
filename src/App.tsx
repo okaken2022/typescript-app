@@ -61,6 +61,23 @@ let msg2: typeof msg;
 let animal = { cat: "small cat"};
 let newAnimal: typeof animal = { cat: "big cat" };
 
+//keyof
+type KEYS = {
+  primary: string;
+  secondary: string;
+};
+
+let key: keyof KEYS
+key = "primary";
+
+//typeof + keyof
+const SPORTS = {
+  soccer: "Soccer",
+  baseball: "Baseball"
+}
+
+let keySports: keyof typeof SPORTS;
+keySports = "soccer"
 
 function App() {
   return (
