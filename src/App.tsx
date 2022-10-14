@@ -76,6 +76,9 @@ const SPORTS = {
   baseball: "Baseball"
 }
 
+let keySports: keyof typeof SPORTS;
+keySports = "soccer"
+
 //enum(列挙型)連番を作ってくれる。メンテナンス性の向上
 enum OS {
   Widows,
@@ -95,9 +98,20 @@ const PC2: PC = {
   OSType: OS.Mac
 }
 
-let keySports: keyof typeof SPORTS;
-keySports = "soccer"
+//型の互換性
+const comp1 = "test";
+  // より抽象度の高いstringという型に対して、具体的な"test"という文字列を入れることはできる
+  let comp2: string = comp1;
+  // その反対はできない
+  let comp3: string = "test";
+  let comp4: "test" = comp3;
 
+let funcComp1 = (x: number) => {};
+let funcComp2 = (x: string) => {};
+  // データ型が違うので代入できない
+  funcComp1 = funcComp2
+
+}
 function App() {
   return (
     <div className="App">
