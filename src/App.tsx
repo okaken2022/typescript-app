@@ -4,6 +4,7 @@ import './App.css';
 
 // JSONの型推論
 import Data from "./data.json"
+import TestComponent from './TestComponent';
 type USERS = typeof Data;
 
 const name = "hello";
@@ -159,11 +160,12 @@ const funcGen4 = <T extends Props>(props: T) => {
   return { value: props.price };
 }
 
-function App() {
+// React Hooks Props型
+const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
-
+        <TestComponent text="hello from App />
       </header>
     </div>
   );
